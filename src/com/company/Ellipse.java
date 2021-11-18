@@ -8,6 +8,14 @@ public class Ellipse extends Figure {
         super(c, new Point(px,py));
     }
 
+    public int getPerimeter(){
+        return (int) (2 * 3.14 * Math.sqrt(((getLength()*getLength())+(getWidth()*getWidth()))/2) );
+    }
+
+    public int getSurface(){
+        return (int) (3.14* getWidth() * getLength());
+    }
+
     public void draw(Graphics g) {
 
     }

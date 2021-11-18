@@ -23,6 +23,8 @@ public abstract class Figure {
 
     }
 
+
+
     @Override  //generate toString
     public String toString() {
 
