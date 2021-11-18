@@ -22,6 +22,7 @@ public class Point {
 
 
 
+
     public Integer getX() {
         return X;
     }

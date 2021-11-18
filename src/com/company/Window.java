@@ -36,6 +36,7 @@ public class Window extends JFrame implements ActionListener {
         nouveau.addActionListener(this);
         enregistrer.addActionListener(this);
         ouvrir.addActionListener(this);
+        //
 
         Container contentPanel = this.getContentPane();
 

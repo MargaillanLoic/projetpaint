@@ -35,5 +35,6 @@ public class Main {
     System.out.println(ellipse);
     System.out.println("le périmètre est " +ellipse.getPerimeter());
     System.out.println("la surface est " + ellipse.getSurface());
+
     }
 }

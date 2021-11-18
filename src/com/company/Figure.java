@@ -17,6 +17,7 @@ public abstract class Figure {
         this.p = p;
     }
 
+
     public void setBoundingBox(Integer width, Integer length) { //methode qui définit les valeurs de width et length
         this.width= width;
         this.length= length;

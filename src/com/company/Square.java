@@ -6,6 +6,7 @@ public class Square extends Figure{
 
 
 
+
     public Square(Integer px,Integer py, Color c) {
         super(c, new Point(px,py));
         //setLength(getWidth());
