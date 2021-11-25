@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Window extends JFrame implements ActionListener {
+    static protected Dessin d = new Dessin();
 
     public Window(String Title,int x, int y) {
         super(Title);
@@ -27,35 +28,67 @@ public class Window extends JFrame implements ActionListener {
         menu1.add(enregistrer);
         menu1.add(quitter);
 
-        JMenu menu2=new JMenu("About");
+        JMenu menu2=new JMenu("A propos");
+        JMenuItem auteurs= new JMenuItem("Auteurs");
 
+        menu2.add(auteurs);
 
         m.add(menu1);
-        this.setJMenuBar(m);
+        m.add(menu2);
+
+        //this.setJMenuBar(m);
+
         ouvrir.addActionListener(this);
         nouveau.addActionListener(this);
         enregistrer.addActionListener(this);
-        ouvrir.addActionListener(this);
-        //
+        quitter.addActionListener(this);
+        auteurs.addActionListener(this);
+
 
         Container contentPanel = this.getContentPane();
 
         JPanel pan1 = new JPanel();
+        String[] buttonName1 ={"Black","Blanc","Rouge","Vert","Bleu","Orange"};
+        pan1.setLayout(new GridLayout(2,4));
 
-        String[] buttonName ={"Noir","Blanc","Rouge","Vert","Bleu"};
-
-        JButton colorButton[] = new JButton[5];
-        for (int i=0;i<5;i++){
-            colorButton[i]=new JButton(buttonName[i]);
+        JButton colorButton[] = new JButton[6];
+        for (int i=0;i<6;i++){
+            colorButton[i]=new JButton(buttonName1[i]);
             pan1.add(colorButton[i]);
             colorButton[i].addActionListener(this);
         }
-        //bouton1.setBackground(Color.black);
 
-        pan1.setLayout(new GridLayout(2,4));
+        colorButton[0].setBackground(Color.black);
+        colorButton[1].setBackground(Color.white);
+        colorButton[2].setBackground(Color.red);
+        colorButton[3].setBackground(Color.green);
+        colorButton[4].setBackground(Color.blue);
+        colorButton[5].setBackground(Color.orange);
 
-        this.getContentPane().add(pan1);
 
+        JPanel pan2 = new JPanel();
+        String[] buttonName2 = {"Ellipse","Cercle","Carre","Rectangle"};
+        pan2.setLayout(new GridLayout(2,2));
+
+        JButton nameButton[] = new JButton[4];
+        for(int i=0;i<4;i++){
+            nameButton[i]= new JButton(buttonName2[i]);
+            pan2.add(nameButton[i]);
+            nameButton[i].addActionListener(this);
+        }
+
+        //this.getContentPane().add(pan1);
+        JPanel paneau = new JPanel();
+        paneau.setLayout(new GridLayout(1,2));
+        paneau.add(pan1);
+        paneau.add(pan2);
+        d = new Dessin();
+       // paneau.setSize(1000,250);
+       // this.setLayout(new GridLayout(2,1));
+        contentPanel.add(new JTextArea(""),"Center");
+        this.getContentPane().add(d,"Center");
+        this.getContentPane().add(paneau,"South");
+        this.setJMenuBar(m);
         this.setVisible(true);
 
     }
@@ -68,9 +101,30 @@ public class Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String cmd=e.getActionCommand();
         switch (cmd){
-            case "Que viva Ensea":
-            System.out.println("clicked");
-            break;
-        }
+            case "Rouge" : d.setCouleur(Color.red);
+                break;
+            case "Vert" : d.setCouleur(Color.green);
+                break;
+            case "Noir" : d.setCouleur(Color.black);
+                break;
+            case "Bleu" : d.setCouleur(Color.blue);
+                break;
+            case "Jaune" : d.setCouleur(Color.yellow);
+                break;
+            case "Rose" : d.setCouleur(Color.pink);
+                break;
+            case "Magenta" : d.setCouleur(Color.magenta);
+                break;
+            case "Orange" : d.setCouleur(Color.orange);
+                break;
+            case "Rectange" : d.setNomFig("Rectangle");
+                break;
+            case "Carre" : d.setNomFig("Carre");
+                break;
+            case "Ellipse" : d.setNomFig("Ellipse");
+                break;
+            case "Cercle" : d.setNomFig("Cercle");
+                break;
+                    }
     }
 }
