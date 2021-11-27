@@ -3,18 +3,18 @@ import java.awt.*;
 
 public abstract class Figure {
 
-    private Color c;
-    private Point p;
+    protected Color c;
+    protected Point origine;
     private Integer width;
     private Integer length;
 
+
     //public abstract void setBoundingBox (Integer heightBB, Integer widthBB); //abstract method
 
-    public abstract void draw(Graphics g);//abstract method
 
     public Figure(Color c, Point p) { //constructeur
         this.c = c;
-        this.p = p;
+        this.origine = p;
     }
 
 
@@ -29,8 +29,11 @@ public abstract class Figure {
     @Override  //generate toString
     public String toString() {
 
-        return "Une figure de taille " + width + ";" + length + " , de couleur, " + c +" et de point " + p + " a été créé ";
+        return "Une figure de taille " + width + ";" + length + " , de couleur, " + c +" et de point " + origine + " a été créé ";
     }
+
+    public abstract void draw(Graphics graphics);//abstract method
+
 
 
     public Color getC() {
@@ -38,7 +41,7 @@ public abstract class Figure {
     }
 
     public Point getP() {
-        return p;
+        return origine;
     }
 
 

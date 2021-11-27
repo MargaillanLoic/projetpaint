@@ -17,7 +17,5 @@ public class Ellipse extends Figure {
         return (int) (3.14* getWidth() * getLength());
     }
 
-    public void draw(Graphics g) {
-
-    }
+    public void draw(Graphics g) {}
 }

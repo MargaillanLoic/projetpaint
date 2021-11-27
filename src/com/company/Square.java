@@ -28,7 +28,8 @@ public class Square extends Figure{
 
     }
 
-    public void draw(Graphics g) {
-
+    public void draw(Graphics graphics) {
+        graphics.setColor(this.c);
+        graphics.fillRect(origine.getX(), origine.getY(), this.getWidth(), this.getWidth());
     }
 }
