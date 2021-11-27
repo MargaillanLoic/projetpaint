@@ -41,13 +41,6 @@ public abstract class Figure {
         return p;
     }
 
-    public void setWidth(Integer width) {
-        this.width = width;
-    }
-
-    public void setLength(Integer length) {
-        this.length = length;
-    }
 
     public Integer getWidth() {
         return width;

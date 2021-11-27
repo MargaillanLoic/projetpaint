@@ -78,16 +78,16 @@ public class Window extends JFrame implements ActionListener {
         }
 
         //this.getContentPane().add(pan1);
-        JPanel paneau = new JPanel();
-        paneau.setLayout(new GridLayout(1,2));
-        paneau.add(pan1);
-        paneau.add(pan2);
+        JPanel panneau = new JPanel();
+        panneau.setLayout(new GridLayout(1,2));
+        panneau.add(pan1);
+        panneau.add(pan2);
         d = new Dessin();
-       // paneau.setSize(1000,250);
+       // panneau.setSize(1000,250);
        // this.setLayout(new GridLayout(2,1));
         contentPanel.add(new JTextArea(""),"Center");
         this.getContentPane().add(d,"Center");
-        this.getContentPane().add(paneau,"South");
+        this.getContentPane().add(panneau,"South");
         this.setJMenuBar(m);
         this.setVisible(true);
 
@@ -102,6 +102,7 @@ public class Window extends JFrame implements ActionListener {
         String cmd=e.getActionCommand();
         switch (cmd){
             case "Rouge" : d.setCouleur(Color.red);
+                System.out.println(("rouge"));
                 break;
             case "Vert" : d.setCouleur(Color.green);
                 break;
@@ -125,6 +126,13 @@ public class Window extends JFrame implements ActionListener {
                 break;
             case "Cercle" : d.setNomFig("Cercle");
                 break;
-                    }
+            case "Auteurs" : JOptionPane jop = new JOptionPane();
+                jop.showInternalMessageDialog(jop, "Auteurs : Loïc Margaillan 2G2TP1", "Information", JOptionPane.INFORMATION_MESSAGE);
+                break;
+            case "Quitter" : System.exit(0);
+                break;
+            case "Nouveau" : d.efface();
+                break;
+        }
     }
 }
