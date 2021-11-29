@@ -9,9 +9,6 @@ public abstract class Figure {
     private Integer length;
 
 
-    //public abstract void setBoundingBox (Integer heightBB, Integer widthBB); //abstract method
-
-
     public Figure(Color c, Point p) { //constructeur
         this.c = c;
         this.origine = p;

@@ -17,5 +17,8 @@ public class Ellipse extends Figure {
         return (int) (3.14* getWidth() * getLength());
     }
 
-    public void draw(Graphics g) {}
+    public void draw(Graphics graphics) {
+        graphics.setColor(this.c);
+        graphics.fillOval(origine.getX(), origine.getY(), this.getWidth(), this.getLength());
+    }
 }

@@ -23,7 +23,8 @@ public class Circle extends Figure{
         super.setBoundingBox(width,width);
 
     }
-    public void draw(Graphics g) {
-
+    public void draw(Graphics graphics) {
+        graphics.setColor(this.c);
+        graphics.fillOval(origine.getX(), origine.getY(), this.getWidth(), this.getWidth());
     }
 }

@@ -52,19 +52,21 @@ public class Dessin extends JPanel implements MouseListener, MouseMotionListener
         X=e.getX();
         Y=e.getY();
         switch(nomForme){
-            case "Rectangle" : liste.add(new Rectangle(X,Y,c));
-                break;
+
             case "Ellipse" : liste.add(new Ellipse(X, Y, c));
                 break;
             case "Carre" : liste.add(new Square(X, Y, c));
                 break;
             case "Cercle" : liste.add(new Circle(X, Y, c));
                 break;
+            case "Rectangle" : liste.add(new Rectangle(X,Y,c));
+                break;
         }
-        System.out.println("x: "+X);
-        System.out.println("Y: "+Y);
-        System.out.println(nomForme);
-        System.out.println(liste);
+        //Tests:
+        //System.out.println("x: "+X);
+        //System.out.println("Y: "+Y);
+        //System.out.println(nomForme);
+        //System.out.println(liste);
     }
 
     @Override
@@ -93,4 +95,21 @@ public class Dessin extends JPanel implements MouseListener, MouseMotionListener
         return this.liste;
     }
 
+    public void save(){
+        try{
+            FileOutputStream fos = new FileOutputStream("Enregistrement");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeInt(liste.size());
+            for (Figure f : liste ){
+                oos.writeObject(f);
+            }
+            oos.close();
+            System.out.println("Dessin enregistré");
+
+        }
+        catch(Exception e){
+            System.out.println("Erreur");
+        }
+    }
 }

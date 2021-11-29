@@ -3,9 +3,6 @@ import java.awt.*;
 
 public class Rectangle extends Figure {
 
-
-
-
     public Rectangle (int px, int py, Color c){
         super(c,new Point(px,py));
     }
@@ -22,6 +19,4 @@ public class Rectangle extends Figure {
         graphics.setColor(this.c);
         graphics.fillRect(origine.getX(), origine.getY(), this.getWidth(), this.getLength());
     }
-
-
 }

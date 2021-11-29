@@ -133,6 +133,10 @@ public class Window extends JFrame implements ActionListener {
                 break;
             case "Nouveau" : d.efface();
                 break;
+            case "Enregistrer" :  d.save();
+                JOptionPane save = new JOptionPane();
+                save.showInternalMessageDialog(save, "Dessin enregistré");
+                break;
         }
     }
 }
